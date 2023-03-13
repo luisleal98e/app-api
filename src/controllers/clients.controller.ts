@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import db from '../models'
 
-const clientsModel = db.clients
+const clientsModel = db.clients 
 
 export const clientList = async (req: Request, res: Response) => {
   try {
