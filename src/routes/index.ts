@@ -17,7 +17,7 @@ import {
 
 import {
   invoicesList,
-  invoicesUnion,
+  invoiceFind,
   invoicesCreate,
   invoicesDelete,
 } from '../controllers/invoices.controller'
@@ -38,7 +38,7 @@ router.put('/services/update/:service', serviceUpdate)
 router.delete('/services/delete/:service', serviceDelete)
 
 router.get('/invoices/', invoicesList)
-router.get('/invoices/union/', invoicesUnion)
+router.get('/invoices/find/:invoice', invoiceFind)
 router.post('/invoices/add-invoice', invoicesCreate)
 router.delete('/invoices/delete/:invoice', invoicesDelete)
 

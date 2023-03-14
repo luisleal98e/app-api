@@ -13,10 +13,18 @@ export const invoicesList = async (req: Request, res: Response) => {
   }
 }
 
-export const invoicesUnion = async (req: Request, res: Response) => {
-    const query = await invoicesModel.findAll({ include: clientsModel })
-    console.log(JSON.stringify(invoicesModel, null, 2))
-    return res.status(200).send(query) 
+export const invoiceFind = async (req: Request, res: Response) => {
+  const { invoice } = req.params
+  try {
+    const query = await invoicesModel.findOne({
+      where: {
+        id: invoice,
+      },
+    })
+    return res.status(200).send(query)
+  } catch (error) {
+    return res.status(400).send(error)
+  }
 }
 
 export const invoicesCreate = async (req: Request, res: Response) => {
