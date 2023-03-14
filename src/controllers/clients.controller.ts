@@ -72,7 +72,7 @@ export const clientDelete = async (req: Request, res: Response) => {
         id: client,
       },
     })
-    return res.status(200).send(query)
+    return res.status(204).send("Eliminado con exito")
   } catch (error) {
     return res.status(400).send(error)
   }
